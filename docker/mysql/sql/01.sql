@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS todos;
+
+CREATE TABLE todos (
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    task TEXT NOT NULL,
+    limit_date TEXT NOT NULL,
+    status Boolean NOT NULL,
+    PRIMARY KEY(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
