@@ -8,16 +8,10 @@ Sample of Go API designed with Clean Architecture.
 git clone https://github.com/hirokikondo86/clean-architecture-sample
 ```
 
-## Runnning with Docker
+## Running with Docker
 
 ```
 docker-compose up -d
-```
-
-## Initialize database
-
-```
-sh docker/mysql/sql/init.sql
 ```
 
 Access the web endpoint at http://localhost:8080/todos

@@ -1,3 +1,7 @@
+CREATE DATABASE IF NOT EXISTS sample;
+
+use sample;
+
 DROP TABLE IF EXISTS todos;
 
 CREATE TABLE todos (
