@@ -15,20 +15,10 @@ type TodoController struct {
 func NewTodoController(sqlHandler database.SqlHandler) *TodoController {
 	return &TodoController{
 		Interactor: usecase.TodoInteractor{
-			TodoRepository: usecase.TodoRepository{
+			TodoRepository: &database.TodoRepository{
 				SqlHandler: sqlHandler,
 			},
 		},
-	}
-}
-
-func (controller *TodoController) Create(c Context) {
-	todo := domain.Todo{}
-	c.Bind(&todo)
-	err := controller.Interactor.Add(todo)
-	if err != nil {
-		c.JSON(500, err)
-		return
 	}
 }
 
@@ -49,4 +39,24 @@ func (controller *TodoController) Show(c Context) {
 		return
 	}
 	c.JSON(200, todo)
+}
+
+func (controller *TodoController) Create(c Context) {
+	todo := domain.Todo{}
+	c.Bind(&todo)
+	err := controller.Interactor.Add(todo)
+	if err != nil {
+		c.JSON(500, err)
+		return
+	}
+}
+
+func (controller *TodoController) Update(c Context) {
+	todo := domain.Todo{}
+	c.Bind(&todo)
+	err := controller.Interactor.Edit(todo)
+	if err != nil {
+		c.JSON(500, err)
+		return
+	}
 }

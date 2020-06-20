@@ -13,9 +13,10 @@ func init() {
 
 	todoController := controllers.NewTodoController(NewSqlHandler())
 
-	router.POST("/todos", func(c *gin.Context) { todoController.Create(c) })
 	router.GET("/todos", func(c *gin.Context) { todoController.Index(c) })
 	router.GET("/todos/:id", func(c *gin.Context) { todoController.Show(c) })
+	router.POST("/todos", func(c *gin.Context) { todoController.Create(c) })
+	router.PUT("/todos/:id", func(c *gin.Context) { todoController.Update(c) })
 
 	Router = router
 }
