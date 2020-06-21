@@ -1,22 +1,25 @@
 package infrastructure
 
 import (
-	"github.com/hirokikondo86/clean-architecture-sample/src/app/interface/controllers"
-
+	"github.com/gin-contrib/cors"
 	gin "github.com/gin-gonic/gin"
+	"github.com/hirokikondo86/clean-architecture-sample/src/app/interfaces/controllers"
 )
 
 var Router *gin.Engine
 
 func init() {
-	router := gin.Default()
+	r := gin.Default()
+
+	r.Use(cors.Default())
 
 	todoController := controllers.NewTodoController(NewSqlHandler())
 
-	router.GET("/todos", func(c *gin.Context) { todoController.Index(c) })
-	router.GET("/todos/:id", func(c *gin.Context) { todoController.Show(c) })
-	router.POST("/todos", func(c *gin.Context) { todoController.Create(c) })
-	router.PUT("/todos/:id", func(c *gin.Context) { todoController.Update(c) })
+	r.GET("/api/v1/todos", func(c *gin.Context) { todoController.Index(c) })
+	r.GET("/api/v1/todos/:id", func(c *gin.Context) { todoController.Show(c) })
+	r.POST("/api/v1/todos", func(c *gin.Context) { todoController.Create(c) })
+	r.PUT("/api/v1/todos/:id", func(c *gin.Context) { todoController.Update(c) })
+	r.DELETE("/api/v1/todos/:id", func(c *gin.Context) { todoController.Destroy(c) })
 
-	Router = router
+	Router = r
 }

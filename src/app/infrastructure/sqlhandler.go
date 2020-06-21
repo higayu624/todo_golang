@@ -3,9 +3,9 @@ package infrastructure
 import (
 	"database/sql"
 
-	"github.com/hirokikondo86/clean-architecture-sample/src/app/interface/database"
-
 	_ "github.com/go-sql-driver/mysql"
+
+	"github.com/hirokikondo86/clean-architecture-sample/src/app/interfaces/database"
 )
 
 type SqlHandler struct {
@@ -17,6 +17,7 @@ func NewSqlHandler() database.SqlHandler {
 	if err != nil {
 		panic(err.Error)
 	}
+
 	sqlHandler := new(SqlHandler)
 	sqlHandler.Conn = conn
 	return sqlHandler

@@ -1,12 +1,8 @@
 package domain
 
-import "time"
-
 type Todo struct {
-	ID        int       `json: "id"`
-	Task      string    `json: "task"`
-	LimitDate time.Time `json: "limitDate"`
-	Status    bool      `json: "status"`
+	ID    int    `json:"id"`
+	Title string `json:"title"`
 }
 
 type Todos []Todo
