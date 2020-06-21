@@ -14,4 +14,8 @@ git clone https://github.com/hirokikondo86/clean-architecture-sample
 docker-compose up -d
 ```
 
-Access the web endpoint at http://localhost:8080/todos
+Access the web endpoint at http://localhost:8080/api/v1/todos
+
+## License
+
+[MIT license](https://b4b4r07.mit-license.org/)
