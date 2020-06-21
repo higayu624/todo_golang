@@ -16,6 +16,8 @@ docker-compose up -d
 
 Access the web endpoint at http://localhost:8080/api/v1/todos
 
+If you do not have access, please wait a few moments while the SQL execution completes.
+
 ## License
 
 [MIT license](https://b4b4r07.mit-license.org/)
