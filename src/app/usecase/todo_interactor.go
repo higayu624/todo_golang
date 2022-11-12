@@ -1,11 +1,14 @@
 package usecase
+//アプリケーション固有のビジネスルール
 
-import "github.com/hirokikondo86/clean-architecture-sample/src/app/domain"
+import "github.com/higayu624/todo_golang/src/app/domain"
 
 type TodoInteractor struct {
 	TodoRepository TodoRepository
+	//sqlhandler.goのTodoRepositoryインターフェースを継承している
 }
 
+//インターフェースを継承したメソッドの宣言
 func (interactor *TodoInteractor) Todos() (todo domain.Todos, err error) {
 	todo, err = interactor.TodoRepository.FindAll()
 	return

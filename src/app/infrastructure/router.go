@@ -2,7 +2,7 @@ package infrastructure
 
 import (
 	"github.com/gin-contrib/cors"
-	gin "github.com/gin-gonic/gin"
+	"github.com/gin-gonic/gin"
 	"github.com/hirokikondo86/clean-architecture-sample/src/app/interfaces/controllers"
 )
 

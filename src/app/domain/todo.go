@@ -1,4 +1,5 @@
 package domain
+//Entity層
 
 type Todo struct {
 	ID    int    `json:"id"`

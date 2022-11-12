@@ -1,6 +1,6 @@
 package usecase
 
-import "github.com/hirokikondo86/clean-architecture-sample/src/app/domain"
+import "github.com/higayu624/todo_golang/src/app/domain"
 
 type TodoRepository interface {
 	FindAll() (domain.Todos, error)

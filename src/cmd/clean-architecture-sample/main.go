@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/hirokikondo86/clean-architecture-sample/src/app/infrastructure"
+	"github.com/higayu624/todo_golang/src/app/infrastructure"
 )
 
 func main() {

@@ -1,4 +1,4 @@
-module github.com/hirokikondo86/clean-architecture-sample
+module github.com/higayu624/todo_golang
 
 go 1.14
 
