@@ -9,17 +9,17 @@ import (
 )
 
 type SqlHandler struct {
-	Conn *sql.DB
+	Conn *sql.DB//接続を保持管理する
 }
 
 func NewSqlHandler() database.SqlHandler {
-	conn, err := sql.Open("mysql", "root:@tcp(db:3306)/sample")
+	conn, err := sql.Open("mysql", "root:@tcp(db:3306)/sample")//DB構造体のインスタンスを取得
 	if err != nil {
 		panic(err.Error)
 	}
 
 	sqlHandler := new(SqlHandler)
-	sqlHandler.Conn = conn
+	sqlHandler.Conn = conn//DB接続インスタンスの初期化
 	return sqlHandler
 }
 

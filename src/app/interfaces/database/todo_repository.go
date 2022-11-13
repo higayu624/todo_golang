@@ -1,7 +1,7 @@
 package database
 
 import (
-	"github.com/hirokikondo86/clean-architecture-sample/src/app/domain"
+	"github.com/higayu624/todo_golang/src/app/domain"
 )
 
 type TodoRepository struct {
@@ -22,10 +22,12 @@ func (repo *TodoRepository) FindAll() (todos domain.Todos, err error) {
 		if err := rows.Scan(&id, &title); err != nil {
 			continue
 		}
+		//値を構造体に代入
 		todo := domain.Todo{
 			ID:    id,
 			Title: title,
 		}
+		//構造体の配列に代入
 		todos = append(todos, todo)
 	}
 	return
