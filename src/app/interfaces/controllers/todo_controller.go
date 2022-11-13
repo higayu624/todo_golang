@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/hirokikondo86/clean-architecture-sample/src/app/domain"
-	"github.com/hirokikondo86/clean-architecture-sample/src/app/interfaces/database"
-	"github.com/hirokikondo86/clean-architecture-sample/src/app/usecase"
+	"github.com/higayu624/todo_golang/src/app/domain"
+	"github.com/higayu624/todo_golang/src/app/interfaces/database"
+	"github.com/higayu624/todo_golang/src/app/usecase"
 )
 
 type TodoController struct {

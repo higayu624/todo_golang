@@ -3,7 +3,7 @@ package infrastructure
 import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"github.com/hirokikondo86/clean-architecture-sample/src/app/interfaces/controllers"
+	"github.com/higayu624/todo_golang/src/app/interfaces/controllers"
 )
 
 var Router *gin.Engine

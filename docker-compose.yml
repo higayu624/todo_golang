@@ -12,6 +12,7 @@ services:
       - ./docker/mysql/conf.d:/etc/mysql/conf.d
       - ./docker/mysql/data:/var/lib/mysql
       - ./docker/mysql/log:/var/log/mysql
+    platform: linux/amd64
     environment:
       MYSQL_DATABASE: sample
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
@@ -23,7 +24,6 @@ services:
       - "8080:8080"
     volumes:
       - .:/clean-architecture-sample
-    platform: linux/amd64
     environment:
       MYAPP_DATABASE_HOST: mysql
     depends_on:
